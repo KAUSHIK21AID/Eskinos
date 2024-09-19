@@ -1,4 +1,4 @@
-
+# Eskinos
 Welcome to Eskinos, a revolutionary AI tool designed to enhance the diagnosis of Chronic Kidney Disease (CKD) through advanced machine learning and data analysis techniques. Eskinos aims to provide doctors and medical professionals with innovative solutions for better patient care.
 
 Processes Involved:
