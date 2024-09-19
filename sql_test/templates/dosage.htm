@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing head content... -->
+    <title> New Dosage Details</title>
+</head>
+<style>
+    form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+</style>
+<body>
+    <h1>Add Dosage Information</h1>
+    <form method="post" action="/submit_dosage">
+        <label for="dosage">Dosage:</label>
+        <input type="text" id="dosage" name="dosage" required><br>
+<!-- 
+        <label for="dosage_type">Dosage Type:</label>
+        <input type="text" id="dosageType" name="dosage_type" required><br> -->
+
+        <label for="dosage_type">Dosage Type:</label>
+        <select name="dosage_type" style="width: 200px; height: 30px;" required>
+            <option value="medicine">medicine</option>
+            <option value="injection">injection</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit Dosage">
+    </form>
+</body>
+</html>

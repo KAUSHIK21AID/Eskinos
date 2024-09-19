@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css">
+    <!-- Include Bootstrap for modal functionality -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Patient Data Form</title>
+    <script>
+        function showError(message, field) {
+            // Create a new div for error message
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error-message";
+            errorDiv.textContent = message;
+
+            // Insert the error message after the input field
+            field.parentNode.insertBefore(errorDiv, field.nextSibling);
+
+            // Add error styling to the input field
+            field.classList.add("error");
+
+            // Set focus to the input field
+            field.focus();
+        }
+        function validateInput() {
+            var bpInput = document.getElementById("bp").value;
+            var bpField = document.getElementById("bp");
+
+            // Remove existing error styling
+            bpField.classList.remove("error");
+
+            // Check if the input is empty
+            if (bpInput.trim() === "") {
+                showError("Please fill in the blood pressure field.", bpField);
+                return false;
+            }
+
+            // Check if the input contains the '/' symbol
+            if (!bpInput.includes('/')) {
+                showError("Blood pressure should be in the format systolic/diastolic.", bpField);
+                return false;
+            }
+
+            // Split the input into systolic and diastolic values
+            var bpValues = bpInput.split('/');
+            var systolic = parseInt(bpValues[0]);
+            var diastolic = parseInt(bpValues[1]);
+
+            // Check if systolic exceeds 200
+            if (systolic > 210) {
+                showError("Systolic value cannot exceed 210.", bpField);
+                return false;
+            }
+
+            // Check if diastolic exceeds 200
+            if (diastolic > 130) {
+                showError("Diastolic value cannot exceed 130.", bpField);
+                return false;
+            }
+
+            // return true;
+        // }
+            var inputValue = document.getElementById("age").value;
+            var element = document.getElementById("age")
+            // Check if the input is a number
+            if (inputValue == "") {
+                element.focus();
+                alert("Please enter age");
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("age cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 100) {
+                alert("Age cannot exceed value 100");
+                element.focus();
+                return false;
+            }
+            var inputValue = document.getElementById("height").value;
+            var element = document.getElementById("height")
+            // Check if the input is a number
+            if (inputValue == "") {
+                element.focus();
+                alert("Please enter height");
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("height cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 195 || inputValue < 100) {
+                alert("Height must be in range 100cm and 195cm");
+                element.focus();
+                return false;
+            }
+
+            var inputValue = document.getElementById("weight").value;
+            var element = document.getElementById("weight")
+            // Check if the input is a number
+            if (inputValue == "") {
+                element.focus();
+                alert("Please enter weight");
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("weight cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 210 || inputValue < 20) {
+                alert("Weight must be in range of 20 kg - 120 kg");
+                element.focus();
+                return false;
+            }
+
+            var inputValue = document.getElementById("glomerular_filtration").value;
+            var element = document.getElementById("glomerular_filtration")
+            // Check if the input is a number
+            if (inputValue == "") {
+                element.focus();
+                alert("Please enter GFR");
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("GFR cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 120) {
+                alert("GFR cannot exceed the value 120");
+                element.focus();
+                return false;
+            }
+
+            // return true;
+            // return true;
+            var inputValue = document.getElementById("serum_creatinine_level").value;
+            var element = document.getElementById("serum_creatinine_level")
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter Serum Creatinine");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("Creatinine cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 30) {
+                alert("Cretinine cannot exceeds the value 30");
+                element.focus(); 
+                return false;
+            }
+
+            // return true;
+            var inputValue = document.getElementById("haemoglobin_level").value;
+            var element = document.getElementById("haemoglobin_level")
+
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter Haemoglobin_level");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("Haemoglobin_level cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 16) {
+                alert("Haemoglobin_level cannot exceed the value 16");
+                element.focus();
+                return false;
+            }
+
+            // return true;
+            var inputValue = document.getElementById("total_water_intake").value;
+            var element = document.getElementById("total_water_intake");
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter total_water_intake");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("total_water_intake cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 6) {
+                alert("Detects the total_water_intake anamoly,Kindly enter value between 1-6");
+                element.focus();
+                return false;
+            }
+
+            var inputValue = document.getElementById("total_count").value;
+            var element = document.getElementById("total_count")
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter a total_count.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("total_count cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue < 1000 || inputValue>20000) {
+                alert("Total_count must be in range 1000-20000");
+                element.focus();
+                return false;
+            }
+            var inputValue = document.getElementById("random_blood_sugar").value;
+            var element = document.getElementById("random_blood_sugar")
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter a random_blood_sugar.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("random_blood_sugar cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 500) {
+                alert("Random_blood_sugar cannot exceed value 500");
+                element.focus();
+                return false;
+            }
+            var inputValue = document.getElementById("urea").value;
+            var element = document.getElementById("urea")
+            // Check if the input is a number
+            if (inputValue == "") {
+                alert("Please enter a urea.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input is negative
+            if (inputValue < 0) {
+                alert("urea cannot be negative.");
+                element.focus();
+                return false;
+            }
+
+            // Check if the input exceeds 120
+            if (inputValue > 300) {
+                alert("Urea cannot exceed the value 300");
+                element.focus();
+                return false;
+            }
+
+            return true;
+        }
+</script>
+</head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+        .error {
+            border: 1px solid red; /* Add your preferred error styling */
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        /* <style> */
+    .container {
+        display: flex;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .select-container {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    #medicines {
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #newSection button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #newSection button:hover {
+        background-color: #45a049;
+    }
+    #newinfoSection button {
+        padding: 8px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #newinfoSection button:hover {
+        background-color: #45a049;
+    }
+    </style>
+<body>
+    <h1>Patient Data Form</h1>
+    {% if success %}
+        <div class="alert alert-success" role="alert">
+            Your data has been successfully submitted.
+        </div>
+    {% endif %}
+    <form method="post" action="/submit" onsubmit="return validateInput()">
+        Name: <input type="text" name="name" required><br>
+        Patient_ID: <input type="number" step="0.01" name="id" required><br>
+        Hospital Visited Date: <input type="date" name="hospital_visited_date" required><br>
+        <label for="gender">Gender:</label>
+        <select name="gender" style="width: 200px; height: 30px;">
+            <option value=1>Male</option>
+            <option value=0>Female</option>
+        </select>
+        <br><br>
+        Age: <input type="number" step="0.01" name="age" id="age"><br>
+        Height: <input type="number" step="0.01" name="height" id="height"><br>
+        Weight: <input type="number" step="0.01" name="weight" id="weight"><br>
+        BP: <input type="text" name="bp" id="bp"><br>
+        <label for="diabetes">Diabetes:</label>
+        <select name="diabetes" style="width: 200px; height: 30px;">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="hypertension">Hypertension:</label>
+        <select name="hypertension" style="width: 200px; height: 30px;">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="family_history">Family History:</label>
+        <select name="family_history" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="previous_kidney_disease">Previous Kidney Disease:</label>
+        <select name="previous_kidney_disease" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="urine_albumin">Urine Albumin:</label>
+        <select name="urine_albumin" style="width: 200px; height: 30px;" required>
+            <option value="Nil">Nil</option>
+            <option value="1+">1+</option>
+            <option value="2+">2+</option>
+            <option value="3+">3+</option>
+            <option value="Trace">Trace</option>
+        </select>
+        <br><br>
+        <label for="cardiovascular_disease">Cardiovascular Disease:</label>
+        <select name="cardiovascular_disease" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        Glomerular Filtration: <input type="number" step="0.01" name="glomerular_filtration" id="glomerular_filtration"><br>
+        Serum Creatinine Level: <input type="number" step="0.01" name="serum_creatinine_level" id="serum_creatinine_level"><br>
+        Haemoglobin Level: <input type="number" step="0.01" name="haemoglobin_level" id="haemoglobin_level"><br>
+        <label for="urinary_tract_infection">Urinary Tract Infection:</label>
+        <select name="urinary_tract_infection" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="kidney_stone">Kidney Stone:</label>
+        <select name="kidney_stone" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        <label for="kidney_injury_history">Kidney Injury History:</label>
+        <select name="kidney_injury_history" style="width: 200px; height: 30px;" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+        <br><br>
+        Total Water Intake: <input type="number" step="0.01" name="total_water_intake" id="total_water_intake"><br>
+        <label for="living_area">Living Area:</label>
+        <select name="living_area" style="width: 200px; height: 30px;" required>
+            <option value="Rural">Rural</option>
+            <option value="Urban">Urban</option>
+        </select>
+        <br><br>
+        Total Count: <input type="number" step="0.01" name="total_count" id="total_count"><br>
+        Random Blood Sugar: <input type="number" step="0.01" name="random_blood_sugar" id="random_blood_sugar"><br>
+        Urea: <input type="number" step="0.01" name="urea" id="urea"><br>
+        <label for="pus_cells">Pus Cells:</label>
+        <select name="pus_cells" style="width: 200px; height: 30px;" required>
+            <option value="less">less</option>
+            <option value="high">high</option>
+        </select>
+        <br><br>
+        <label for="worker">Worker:</label>
+        <select name="worker" style="width: 200px; height: 30px;" required>
+            <option value="Field">Field</option>
+            <option value="Manual">Manual</option>
+        </select>
+        <br><br>
+        <label for="diet">Diet:</label>
+        <select name="diet" style="width: 200px; height: 30px;" required>
+            <option value="Veg">Veg</option>
+            <option value="Non-Veg">Non-Veg</option>
+        </select>
+        <br><br>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="flex: 1;"> 
+                <label for="other_medical_condition" style="margin-right: 10px;">Other Medical Condition:</label>
+                <input type="text" name="other_medical_condition" value="nil">
+            </div>
+            <div id="newinfoSection" style="margin-left: 10px;">
+                <label for="addon-info" style="margin-right: 10px;">Addon-Info:</label>
+                <button type="button" onclick="redirectToAddInfoPage()" target = "_blank">Enter details</button>
+            </div>
+        </div>               
+        <!-- BMI: <input type="text" name="bmi" required><br>
+        Stage: <input type="text" name="stage" required><br> -->
+        <div style="display: flex; align-items: center;">
+            <div style="flex: 1;">
+                <label for="medicines">Select Medicine:</label>
+                <select id="medicines" data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="medicines">
+                    <!-- <option value=""></option> -->
+                    {% for medicine in medicines %}
+                        <option value="{{ medicine }}">{{ medicine }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="newSection">
+                <label for="medicines">To add new medicines:</label>
+                <button type="button" onclick="redirectToDosagePage()">Enter New Meds</button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" rel="stylesheet">
+    	<!-- Include Chosen JS -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script
+        <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+        <!-- <script src="appl.js"></script>-->
+        <script>
+            $(document).ready(function() {
+                $(".chosen-select").chosen();
+            });
+        </script>
+        <script>
+            function redirectToDosagePage() {
+                window.open("/dosage",'_blank')
+            }
+            function redirectToAddInfoPage() {
+                window.open("/additional",'_blank')
+            }
+        </script>
+        
+        <!-- </input><br><br> -->
+        <br> 
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
