@@ -27,4 +27,4 @@ Processes Involved:
 
       * --> Next appointment predictions
       - --> Identification of the best medicines
-     --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
+      * --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
