@@ -10,8 +10,8 @@ Processes Involved:
 
 2. Data Cleaning, Validation, and Preprocessing
 
-  Techniques: Imputation, feature selection
-  Methods: Mutual information classification, Random Forest, LightGBM, etc.
+    - Techniques: Imputation, feature selection
+    - Methods: Mutual information classification, Random Forest, LightGBM, etc.
 
 3. Module Building
 
