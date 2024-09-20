@@ -4,7 +4,7 @@ Welcome to Eskinos, a revolutionary AI tool designed to enhance the diagnosis of
 Processes Involved:
 1. Data Collection
 
-  - Source: Local Multispeciality Hospital
+  -- Source: Local Multispeciality Hospital
   - Department: Nephrology
   - Data: 305 patients, 4414 datapoints (rows)
 
