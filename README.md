@@ -19,12 +19,12 @@ Processes Involved:
       - Forecaster: For existing patients, using Deep Learning models like S-ARIMA
       - Predictor: For new patients, using Regression models like Random Forest Regressor
   
-  Recommendation Systems:
-  Recommender: For existing patients, utilizing historical medicinal data and current test results
-  Suggester: For new patients, comparing first visit results with those of low-risk patients
+    - Recommendation Systems:
+      - Recommender: For existing patients, utilizing historical medicinal data and current test results
+      - Suggester: For new patients, comparing first visit results with those of low-risk patients
   
 4. Additional Features
 
-  --> Next appointment predictions
-  --> Identification of the best medicines
-  --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
+    - --> Next appointment predictions
+    - --> Identification of the best medicines
+    - --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
