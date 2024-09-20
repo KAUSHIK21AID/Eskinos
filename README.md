@@ -25,6 +25,6 @@ Processes Involved:
   
 4. Additional Features
 
-    - --> Next appointment predictions
-    - --> Identification of the best medicines
-    - --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
+     --> Next appointment predictions
+     --> Identification of the best medicines
+     --> Analysis of frequency vs GFR (Glomerular Filtration Rate) relationships
