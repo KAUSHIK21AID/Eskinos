@@ -15,9 +15,9 @@ Processes Involved:
 
 3. Module Building
 
-  Predictions:
-  Forecaster: For existing patients, using Deep Learning models like S-ARIMA
-  Predictor: For new patients, using Regression models like Random Forest Regressor
+    - Predictions:
+      - Forecaster: For existing patients, using Deep Learning models like S-ARIMA
+      - Predictor: For new patients, using Regression models like Random Forest Regressor
   
   Recommendation Systems:
   Recommender: For existing patients, utilizing historical medicinal data and current test results
